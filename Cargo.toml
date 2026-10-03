@@ -1,0 +1,53 @@
+[package]
+name = "banana"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "A minimal, single-binary, decentralized Rust P2P runtime"
+license = "MPL-2.0"
+readme = "README.md"
+repository = "https://github.com/charudatta10/banana"
+keywords = ["p2p", "dht", "noise", "networking", "decentralized"]
+categories = ["network-programming"]
+
+[lib]
+name = "banana"
+path = "src/lib.rs"
+
+[[bin]]
+name = "banana"
+path = "bin/banana.rs"
+
+[dependencies]
+tokio = { version = "1.53", features = [
+    "rt",
+    "rt-multi-thread",
+    "macros",
+    "net",
+    "io-util",
+    "sync",
+    "time",
+    "signal",
+] }
+snowstorm = "0.4"
+ed25519-dalek = { version = "3.0", features = ["hazmat"] }
+chacha20poly1305 = "0.11"
+hkdf = "0.13"
+sha2 = "0.11"
+rand = "0.10"
+rand_chacha = "0.10"
+
+[dev-dependencies]
+proptest = "1.11"
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+strip = true
+
+[profile.release.package."*"]
+opt-level = 3
+
+[profile.bench]
+lto = "thin"
