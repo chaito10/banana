@@ -1,5 +1,5 @@
 ---
-title: Banana
+title: Overview
 description: A minimal, single-binary, decentralized P2P runtime written in Rust.
 ---
 
