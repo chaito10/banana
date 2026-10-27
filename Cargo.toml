@@ -6,7 +6,9 @@ rust-version = "1.85"
 description = "A minimal, single-binary, decentralized Rust P2P runtime"
 license = "MPL-2.0"
 readme = "README.md"
-repository = "https://github.com/charudatta10/banana"
+repository = "https://github.com/chaito10/banana"
+homepage = "https://chaito10.github.io/banana/"
+documentation = "https://chaito10.github.io/banana/"
 keywords = ["p2p", "dht", "noise", "networking", "decentralized"]
 categories = ["network-programming"]
 

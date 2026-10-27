@@ -300,10 +300,9 @@ pub struct EventBus {
 impl EventBus {
     /// Builds a bus that keeps `capacity` events buffered per subscriber.
     ///
-    /// The runtime owns bus creation; tests build their own so they can assert
-    /// on events without a running node.
-    #[allow(dead_code)]
-    pub(crate) fn new(capacity: usize) -> Self {
+    /// Applications embedding the runtime create one bus and pass clones to the
+    /// actors they start, so several actors share one event model.
+    pub fn new(capacity: usize) -> Self {
         let (sender, _) = broadcast::channel(capacity.max(1));
         EventBus { sender }
     }

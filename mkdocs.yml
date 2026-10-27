@@ -1,0 +1,92 @@
+site_name: Banana
+site_description: A minimal, single-binary, decentralized P2P runtime written in Rust.
+site_url: https://chaito10.github.io/banana/
+site_author: Banana contributors
+copyright: Copyright &copy; Banana contributors · MPL-2.0
+repo_name: chaito10/banana
+repo_url: https://github.com/chaito10/banana
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  logo: assets/banana.svg
+  favicon: assets/banana.svg
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.action.edit
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Architecture: architecture.md
+  - Protocol: protocol.md
+  - Security: security.md
+  - Configuration: configuration.md
+  - API guide: api.md
+  - Observability: observability.md
+  - CLI: cli.md
+  - Roadmap: roadmap.md
+  - FAQ: faq.md
+  - Contributing: contributing.md
+  - RFC ↗: https://github.com/chaito10/banana/blob/main/RFC.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/chaito10/banana
+      name: Banana on GitHub
+    - icon: fontawesome/solid/book
+      link: https://github.com/chaito10/banana/blob/main/RFC.md
+      name: The Banana RFC
+  generator: false
+
+validation:
+  links:
+    absolute_links: relative_to_docs
+    anchors: warn
